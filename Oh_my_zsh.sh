@@ -13,14 +13,20 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 #Install PowerLevel9k!
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9
 #Configure .zshrc file 
-sed -i '/^ZSH_THEME=.*/{s/^ZSH_THEME=.*/ZSH_THEME="powerlevel9k\/powerlevel9k"/; n; /^ZSH_THEME=.*/{n; /^POWERLEVEL9K_DISABLE_RPROMPT/d; /^POWERLEVEL9K_PROMPT_ON_NEWLINE/d; /^POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX/d; /^POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX/d}}' ~/.zshrc
+sed -i '/^ZSH_THEME=.*/{
+  s/^ZSH_THEME=.*/ZSH_THEME="powerlevel9k\/powerlevel9k"/
+  n
+  /^ZSH_THEME=.*/{
+    n
+    /^POWERLEVEL9K_DISABLE_RPROMPT/d
+    /^POWERLEVEL9K_PROMPT_ON_NEWLINE/d
+    /^POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX/d
+    /^POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX/d
+  }
+}' ~/.zshrc
 
 
 
-echo 'POWERLEVEL9K_DISABLE_RPROMPT=true' >> ~/.zshrc
-echo 'POWERLEVEL9K_PROMPT_ON_NEWLINE=true' >> ~/.zshrc
-echo 'POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="▶"' >> ~/.zshrc
-echo 'POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""' >> ~/.zshrc
 #Change your Default Shell to zsh 
 chsh -s /bin/zsh
 #Restart the terminal
